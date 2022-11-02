@@ -14,6 +14,7 @@ export default function DayList(props) {
         key={dayListItem.id}
         name={dayListItem.name}
         spots={dayListItem.spots}
+        setDay={props.setDay}
       />
     );
     })

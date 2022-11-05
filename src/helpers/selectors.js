@@ -7,3 +7,17 @@ export function getAppointmentsForDay(state, day) {
  }
  return dayObj.appointments.map(appointmentId => state.appointments[appointmentId])
 }
+
+
+export function getInterview(state, interview) {
+  let interviewObj = {};
+
+  if (!interview) {
+    return null;
+  }
+
+  interviewObj["student"] = interview.student;
+  interviewObj["interviewer"] = state.interviewers[interview.interviewer];
+
+  return interviewObj
+}

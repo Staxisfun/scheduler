@@ -18,12 +18,12 @@ export default function useVisualMode(initial) {
   function back() {
   let newHistory = [...history];
   if (newHistory.length > 1) {
-   setMode((prev) => newHistory[(newHistory.length - 1)]);
+   setMode(() => newHistory[(newHistory.length - 1)]);
    console.log("mode", mode)
    console.log("history", history)
+   newHistory.pop();
   }
-  newHistory.pop();
-  setHistory((prev) => newHistory);
+  setHistory(() => newHistory);
 }
 
   return { mode, transition, back };

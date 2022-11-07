@@ -82,6 +82,16 @@ export default function Application(props) {
   const interviewers = getInterviewersForDay(state, state.day) 
   
   
+  
+  function bookInterview(id, interview) {
+    console.log(id, interview)
+  }
+  
+  
+  
+  
+  
+  
   const appointmentsArray = dailyAppointments.map((appointmentObj) => {
   
     const interview = getInterview(state, appointmentObj.interview);
@@ -95,11 +105,12 @@ export default function Application(props) {
         {...appointmentObj}
         interview={interview}
         interviewers={interviewers}
+        bookInterview={bookInterview}
       />
     );
   });
-  
-  
+
+
   return (
     <main className="layout">
       <section className="sidebar">

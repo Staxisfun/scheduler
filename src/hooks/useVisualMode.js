@@ -11,7 +11,8 @@ export default function useVisualMode(initial) {
     setMode(newMode);
    }else {
     setMode(newMode); 
-    setHistory([...history, newMode]);
+    // setHistory([...history, newMode]);
+    setHistory(prev => ([...prev, newMode]))
   }
 }
 
@@ -24,6 +25,7 @@ export default function useVisualMode(initial) {
    newHistory.pop();
   }
   setHistory(() => newHistory);
+  // setHistory(prev => ([...prev, newHistory]))
 }
 
   return { mode, transition, back };

@@ -5,6 +5,7 @@ import "components/Application.scss";
 import DayList from "components/DayList";
 import Appointment from "./Appointment";
 import Axios from "axios";
+import useVisualMode from "hooks/useVisualMode";
 import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "helpers/selectors";
 
 
@@ -52,8 +53,7 @@ import { getAppointmentsForDay, getInterview, getInterviewersForDay } from "help
 
 export default function Application(props) {
 
-  // const [day, setDay] = useState("");
-  // const [days, setDays] = useState([]);
+
   const [state, setState] = useState({
     day: "Monday",
     days: [],

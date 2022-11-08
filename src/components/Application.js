@@ -96,13 +96,31 @@ export default function Application(props) {
       [id]: appointment
     };
 
-    
-//delete request
+    //delete request
     return Axios.put(`/api/appointments/${id}`, {interview})
       .then((res) => {
         setState({ ...state, appointments })
       })
-   
+  }
+
+
+  function cancelInterview(id) {
+    
+    const appointment = {
+      ...state.appointments[id],
+      interview: null
+    };
+
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment
+    };
+
+    //delete request
+    return Axios.delete(`/api/appointments/${id}`)
+      .then((res) => {
+        setState({ ...state, appointments })
+      })
   }
 
 
@@ -125,6 +143,7 @@ export default function Application(props) {
         interview={interview}
         interviewers={interviewers}
         bookInterview={bookInterview}
+        cancelInterview={cancelInterview}
       />
     );
   });

@@ -22,7 +22,6 @@ export default function useApplicationData() {
       Axios.get('/api/appointments'),
       Axios.get('/api/interviewers'),
     ]).then((all) => {
-      console.log(all)
       setState(prev => ({ ...prev, days: all[0].data, appointments: all[1].data, interviewers: all[2].data }));
     });
   }, []

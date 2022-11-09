@@ -31,7 +31,6 @@ export default function Appointment(props) {
         student: name,
         interviewer
       };
-      console.log("interview: ", interview)
       transition(SAVING) //trans deleting
       props.bookInterview(props.id, interview) //cancel interview
       .then((res) => {

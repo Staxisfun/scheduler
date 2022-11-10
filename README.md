@@ -7,9 +7,9 @@ Jest testing used throughout project development
 ## The #1 app for your interview scheduling needs
 
 
-!["screenshot of"]()
-!["screenshot of"]()
-!["screenshot of"]()
+!["screenshot of main page"](https://github.com/Staxisfun/scheduler/blob/master/docs/Main-page.png?raw=true)
+!["screenshot of create interview"](https://github.com/Staxisfun/scheduler/blob/master/docs/Create-Interview.png?raw=true)
+!["screenshot of delete interview"](https://github.com/Staxisfun/scheduler/blob/master/docs/Delete-Interview.png?raw=true)
 
 
 

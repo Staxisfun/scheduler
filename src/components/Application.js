@@ -18,13 +18,13 @@ export default function Application(props) {
     bookInterview,
     cancelInterview
   } = useApplicationData();
-  
-  
-  
+
+
+
   const interviewers = getInterviewersForDay(state, state.day);
-  
+
   const dailyAppointments = getAppointmentsForDay(state, state.day);
-  
+
 
   const appointmentsArray = dailyAppointments.map((appointmentObj) => {
 
@@ -33,9 +33,6 @@ export default function Application(props) {
     return (
       <Appointment
         key={appointmentObj.id}
-        // id={appointmentObj.id}
-        // time={appointmentObj.time}
-        // interview={appointmentObj.interview}
         {...appointmentObj}
         interview={interview}
         interviewers={interviewers}

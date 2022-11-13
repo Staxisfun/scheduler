@@ -1,5 +1,5 @@
 
-
+// receives state and day returns an array of appointments for the given day
 export function getAppointmentsForDay(state, day) {
   const dayObj = state.days.find(x => x.name === day);
   if (!dayObj) {
@@ -8,7 +8,7 @@ export function getAppointmentsForDay(state, day) {
   return dayObj.appointments.map(appointmentId => state.appointments[appointmentId]);
 }
 
-
+// returns interview data when passed an object that contains the interviewer otherwise returns null
 export function getInterview(state, interview) {
   let interviewObj = {};
 
@@ -23,7 +23,7 @@ export function getInterview(state, interview) {
 }
 
 
-
+// receives state and day returns an array of interviewers for a given day
 export function getInterviewersForDay(state, day) {
 
   let interviewers = [];

@@ -13,12 +13,15 @@ export default function Form(props) {
 
   const [error, setError] = useState("");
 
+
+
   function reset() {
 
     setStudent("");
     setInterviewer(null);
 
   }
+
 
   function cancel() {
 
@@ -27,6 +30,8 @@ export default function Form(props) {
     setError("");
   }
 
+
+  //checks to ensure proper input in create interview form
   function validate() {
     if (student === "") {
       setError("Student name cannot be blank");

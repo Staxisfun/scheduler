@@ -21,20 +21,23 @@ export default function Appointment(props) {
   const EDIT = "EDIT";
   const ERROR_SAVE = "ERROR_SAVE";
   const ERROR_DELETE = "ERROR_DELETE";
+
+  //import helper functions from hooks
   const { mode, transition, back } = useVisualMode(
     props.interview ? SHOW : EMPTY
   );
 
 
+  //saves an appointment, shows transition SAVING and catch if there's an error
   function save(name, interviewer) {
     const interview = {
       student: name,
       interviewer
     };
-    transition(SAVING); //trans deleting
-    props.bookInterview(props.id, interview) //cancel interview
+    transition(SAVING);
+    props.bookInterview(props.id, interview)
       .then((res) => {
-        transition(SHOW); //trans empty
+        transition(SHOW);
       })
       .catch((err) => {
         transition(ERROR_SAVE, true);
@@ -42,11 +45,12 @@ export default function Appointment(props) {
   }
 
 
+  //cancels an appointment, shows transition CONFIRM and catch if there's an error
   function deleteI() {
-    transition(DELETING, true); //trans deleting
-    props.cancelInterview(props.id) //cancel interview
+    transition(DELETING, true);
+    props.cancelInterview(props.id)
       .then((res) => {
-        transition(EMPTY); //trans empty
+        transition(EMPTY);
       })
       .catch((err) => {
         transition(ERROR_DELETE, true);

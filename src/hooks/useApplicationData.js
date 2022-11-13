@@ -27,7 +27,7 @@ export default function useApplicationData() {
   );
 
 
-
+  //updates remaining interview spots for a day when an interview is booked or cancelled
   const updateSpots = function (state, appointments) {
     return state.days.map((day) => {
       if (day.name === state.day) {
